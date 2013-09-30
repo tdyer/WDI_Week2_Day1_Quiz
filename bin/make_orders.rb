@@ -1,4 +1,8 @@
 require_relative '../lib/order'
+require_relative '../lib/order_item'
+require_relative '../lib/product_type'
+require_relative '../lib/logger'
+
 
 # Add product descriptions
 products = [ ]
@@ -27,4 +31,4 @@ order.complete_xaction
 order_number += 1
 
 
-puts "Total sales = #{Order.total_sales}"
+puts "Order #{order.id} price = #{order.total_sales}"
