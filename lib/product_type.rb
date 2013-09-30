@@ -8,6 +8,11 @@ class ProductType
 		@name = name
 		@price = price
 		@description = description
+
+	end
+
+	def to_s
+		return "#{@id}, #{@name}, #{@price}, #{@description}"
 	end
   
 end
