@@ -12,7 +12,13 @@ class Order
   end
 
   def complete_xaction
+    log
+  end
 
+  def order_price
+    @order_items.inject(0.0) do |total, item|
+      total + item.quantity * item.product.price
+    end
   end
 
   def to_s
