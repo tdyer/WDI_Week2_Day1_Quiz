@@ -1,5 +1,5 @@
 module Logger
   def log(item)
-    puts item
+    puts "New #{item}"
   end
 end

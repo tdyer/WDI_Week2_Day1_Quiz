@@ -14,7 +14,7 @@ class ProductType
   end
 
   def to_s
-    return "#{@name}: #{@price}"
+    return "Product #{@name}, Price: #{@price}"
   end
   
 end
