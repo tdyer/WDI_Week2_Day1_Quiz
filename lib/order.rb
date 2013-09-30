@@ -20,11 +20,12 @@ class Order
   end
 
   def to_s
-  	@string = "#{@order_id}: #{@order_items}"
+  	@description = "#{@order_id}: #{@order_items}"
+  	return @description
   end
 
   def complete_xaction
-  	Log::entry(@string)
+  	Log::entry(@description)
   end
 
   def calculate_price
