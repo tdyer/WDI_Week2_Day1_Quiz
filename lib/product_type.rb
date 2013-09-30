@@ -1,4 +1,5 @@
 
+
 class ProductType
   attr_accessor :id, :name, :price, :description
 

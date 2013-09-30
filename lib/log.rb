@@ -1,8 +1,4 @@
-# - Log:
-# 	- A log entry should be created for each product type created.
-# 	- A log entry should be created for each order. Logging the order
-#       including its order items.
-#     - Each log entry should be shown on the command line for each order.
+
 
 module Log
 

@@ -3,9 +3,11 @@ require_relative 'product_type'
 
 class OrderItem
 
-	def intialize(product_type, quantity, unit_price)
-		@product_type = product_type
+	attr_accessor :product_type, :quantity, :unit_price
+
+	def intialize(quantity, product_type, unit_price)
 		@quantity = quantity
+		@product_type = product_type
 		@unit_price = unit_price
 	end
 

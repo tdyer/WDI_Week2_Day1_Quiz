@@ -1,6 +1,7 @@
+require 'pry'
 require_relative '../lib/order'
 
-# Add product descriptions
+## Add product descriptions
 products = [ ]
 peas = ProductType.new(120, "Peas", 2.25, "Small bag of Peas")
 carrots = ProductType.new(121, "Carrots", 3.60, "Large bag of Carrots")
@@ -8,6 +9,7 @@ milk = ProductType.new(122, "Milk", 4.25, "1 gallon")
 pudding = ProductType.new(123, "Pudding", 0.75)
 products << peas << carrots << milk << pudding
 
+binding.pry
 
 # Create an order
 order_number = 30
