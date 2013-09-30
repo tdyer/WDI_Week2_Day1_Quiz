@@ -8,24 +8,22 @@ class Order
 	@@sum_of_all_orders = 0
 	@@order_count = 0
 
-	attr_accessor :order_id, :order_items
+	attr_accessor :order_id, :customer, :order_items, :sum_of_all_orders, :order_count
 
-  def initialize(*order_items)
-  	order_id_generator
+  def initialize(order_id, customer)
+  	@order_id = order_id
+  	@customer = customer
   	@order_items = []
   	calculate_price
   	@@sum_of_all_orders += @price
-  end
-
-  def order_id_generator
-  	@order_id = @@order_count + 1
+  	@@order_count += 1
   end
 
   def to_s
   	@string = "#{@order_id}: #{@order_items}"
   end
 
-  def complete_xaction()
+  def complete_xaction
   	Log::entry(@string)
   end
 

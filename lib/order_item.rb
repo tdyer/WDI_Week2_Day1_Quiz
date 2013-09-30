@@ -9,7 +9,6 @@ class OrderItem
 		@unit_price = unit_price
 	end
 
-
   def to_s
     "product type: #{@product}, quantity: #{@quantity}, unit_price: #{@unit_price}"
   end
