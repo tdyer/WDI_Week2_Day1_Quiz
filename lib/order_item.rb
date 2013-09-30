@@ -1,11 +1,11 @@
 require_relative 'product_type'
 
 class OrderItem
-	attr_accessor :product_type, :quantity, :unit_price
+	attr_accessor :quantity, :product_type, :unit_price
 
-	def initialize(product_type, quantity, unit_price)
-		@product_type = product_type
+	def initialize(quantity, product_type, unit_price)
 		@quantity = quantity
+		@product_type = product_type
 		@unit_price = unit_price
 	end
 
