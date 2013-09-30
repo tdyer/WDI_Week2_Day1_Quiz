@@ -1,9 +1,9 @@
-require_relative '<fill_me_in>'
+require_relative 'product_type'
 
 class OrderItem
   attr_accessor :product, :quantity, :unit_price
 
-  def initialize
+  def initialize(product, quantity, unit_price)
     @product = product
     @quantity = quantity
     @unit_price = unit_price  
