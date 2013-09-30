@@ -13,6 +13,7 @@ class Order
   def initialize(*order_items)
   	order_id_generator
   	@order_items = []
+  	calculate_price
   	@@sum_of_all_orders += @price
   end
 
@@ -28,7 +29,10 @@ class Order
   	Log::entry(@string)
   end
 
-  def price
+  def calculate_price
+  	@order_items.each do |item|
+  		@price += item.unit_price
+  	end
   	return @price
   end
 
