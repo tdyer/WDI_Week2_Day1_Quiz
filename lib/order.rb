@@ -8,11 +8,13 @@ class Order
 	@@sum_of_all_orders = 0
 	@@order_count = 0
 
-	attr_accessor :order_id, :customer, :order_items, :sum_of_all_orders, :order_count
+	attr_accessor :order_id, :customer, :order_items, :sum_of_all_orders, :order_count, :customers
 
   def initialize(order_id, customer)
   	@order_id = order_id
   	@customer = customer
+  	@customers = []
+  	@customers << @customer
   	@order_items = []
   	calculate_price
   	@@sum_of_all_orders += @price
