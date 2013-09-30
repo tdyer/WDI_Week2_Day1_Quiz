@@ -29,9 +29,8 @@ order2.order_items << OrderItem.new(7, carrots, carrots.price)
 
 puts order2.price
 
-puts order2.to_s
-
 order1.complete_xaction
+order2.complete_xaction
 order_number += 1
 
-puts @@total_sales
+# puts Order.total_sales
