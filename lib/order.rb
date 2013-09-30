@@ -7,7 +7,7 @@ class Order
 	@@total_sales = 0
 	@@order_count = 0
 
-	attr_accessor :order_id, :customer, :order_items, :total_sales, :order_count, :customers
+	attr_accessor :order_id, :customer, :order_items, :total_sales, :order_count, :customers, :price
 
   def initialize(order_id, customer)
   	@order_id = order_id
@@ -19,22 +19,30 @@ class Order
   end
 
   def to_s
-  	@description = "#{@order_id}: #{@order_items}, total price: $#{@price}"
-  	return @description
+  	@order_summary = "#{@order_id}: #{@order_items}, total price: $#{@price}"
+  	return @order_summary
   end
 
   def complete_xaction
   	calculate_price
-  	Log::entry(@description)
+  	update_total_sales
+  	log_entry("Order completed: #{@order_summary})"
+  end
+
+  def self.total_sales
+    @@total_sales
   end
 
   def calculate_price
   	@price = 0
-  	@order_items.each do |item|
-  		@price += item.unit_price
-  	end
-  	@@total_sales += @price
+  	  @order_items.each do |item|
+      @price += item.unit_price
+  	  end
   	return @price
+  end
+
+  def update_total_sales
+  	@@total_sales += @price
   end
 
 

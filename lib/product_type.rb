@@ -3,23 +3,23 @@ require_relative 'log'
 class ProductType
 	include Log
 
-  attr_accessor :id, :name, :price, :description
+  attr_accessor :id, :name, :price, :description, :string
 
 	def initialize(id, name, price, description=nil)
 		@id = id
 		@name = name
 		@price = price
 		@description = description
-
+		log
 	end
 
 	def to_s
-		@description = "#{@id}, #{@name}, #{@price}, #{@description}"
-	    return @description
+		@string = "ID: #{@id}, #{@name}, #{@description}, $#{@price}"
+		return @string
 	end
 
 	def log
-		Log::entry("Product Type created: #{@description})
+		log_entry("Product Type created: #{@string}")
 	end
   
 end

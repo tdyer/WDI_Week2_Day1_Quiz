@@ -1,11 +1,10 @@
 module Log
+	attr_accessor :log
 
-	def initialize
-	  @log = []
-	end
+	$log = []
 
-	def entry(info)
-	  @log << info
+	def log_entry(info)
+	  $log << info
 	end
 
 end
