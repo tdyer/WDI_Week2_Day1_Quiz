@@ -46,14 +46,14 @@
 
 - Log:
 	- A log entry should be created for each product type created.
-	- A log entry should be create for each order. Logging the order
+	- A log entry should be created for each order. Logging the order
       including it's order items.
     - Each log entry should be shown on the command line for each order.
 
-#####Phase 1
+#####Phase 1####
 - Define classes, including a Log mixin.
 
-#####Phase 2
+#####Phase 2 
 - Calcuate the price of one order.
 - Keep a running sum of all orders, (use Array#inject method?).
 
