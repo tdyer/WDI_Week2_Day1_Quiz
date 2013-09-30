@@ -1,9 +1,7 @@
-require_relative 'log'
 require_relative 'product_type'
-require_relative 'order'
 
 class OrderItem
-	attr_accessor :quantity :product_type  :unit_price
+	attr_accessor :quantity, :product_type,  :unit_price
 
 	def initialize(quantity, product_type, unit_price)
 		@quantity = quantity
@@ -15,5 +13,4 @@ class OrderItem
     "product type: #{@product}, quantity: #{@quantity}, unit_price: #{@unit_price}"
  	 end
 
-  
 end

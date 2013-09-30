@@ -1,23 +1,15 @@
-require_relative 'log'
-
 # This is a description of a *type* of product
 class ProductType
-	include Order_logger
+	include Log
 
-	attr_accessor :name :price 
-	attr_reader :id
+	attr_accessor :name, :price 
+	# attr_reader :id
 
-	def initialize(name, price)
-		@id = id
+	def initialize(id, name, price)
 		@name = name
-		@price = price
-		@products = []
+		@price = price.to_f
+		@id = id
 		log self
-	end
-
-	def id
-		@id = rand(1..100_000)
-		id
 	end
 
 	def to_s

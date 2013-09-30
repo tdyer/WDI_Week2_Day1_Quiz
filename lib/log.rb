@@ -1,4 +1,4 @@
-module Order_logger
+module Log
 
 	def log(message)
 		puts message

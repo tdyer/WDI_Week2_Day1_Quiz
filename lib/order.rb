@@ -1,12 +1,11 @@
-require_relative 'product_type'
-require_relative 'order_item'
 require_relative 'log'
+require_relative 'order_item'
 
 class Order
-	include Order_logger
+	include Log
 	@@num_sold = 0
 
-	attr_accessor :order_items :order_number :customer_name 
+	attr_accessor :order_items, :order_number, :customer_name, :total_sales 
 	attr_reader :order_id
 
 	def initialize(order_number, customer_name)
@@ -14,6 +13,7 @@ class Order
 		@customer_name = customer_name
 		@order_id = order_id
 		@order_items = []
+		@total_sales = 0
 	end
 
 	def order_id
@@ -21,20 +21,13 @@ class Order
 		order_id
 	end
 
-	def order_items(order_item)
-		@items << order_item
-		return @items
-	end
-
 	def complete_xaction
-		log
+		log("Order complete!")
+		@total_sales = @total_sales + 1
 	end
 
-	def all_orders
-		all_orders = 0
-		complete_xaction.each do |x|
-			all_orders += 1
-		end
+	def total_sales
+		@total_sales
 	end
 
 end
