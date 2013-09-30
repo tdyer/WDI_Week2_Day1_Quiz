@@ -1,4 +1,4 @@
 module Log
-  def to_s()
+  def log
   end
 end

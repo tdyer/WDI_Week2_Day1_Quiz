@@ -1,7 +1,8 @@
-require_relative 'product_type'
+require_relative 'log'
 require_relative 'order_item'
 
 class Order
+  include Log
   attr_accessor :order_id, :customer, :order_items
 
   def initialize(order_id, customer)
@@ -11,6 +12,7 @@ class Order
   end
 
   def complete_xaction
+
   end
 
   def to_s
