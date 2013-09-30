@@ -8,16 +8,15 @@ carrots = ProductType.new(121, "Carrots", 3.60, "Large bag of Carrots")
 milk = ProductType.new(122, "Milk", 4.25, "1 gallon")
 pudding = ProductType.new(123, "Pudding", 0.75)
 products << peas << carrots << milk << pudding
-binding.pry
 
 # Create an order
-# order_number = 30
-# order = Order.new(order_number, "Jack Flash")
-# order.order_items << OrderItem.new(2, pudding, 0.65)
-# order.order_items << OrderItem.new(10, peas, peas.price - 0.1)
-# order.complete_xaction
-# order_number += 1
-
+order_number = 30
+order = Order.new(order_number, "Jack Flash")
+order.order_items << OrderItem.new(2, pudding, 0.65)
+order.order_items << OrderItem.new(10, peas, peas.price - 0.1)
+order.complete_xaction
+order_number += 1
+binding.pry
 # # Create another order
 # order = Order.new(order_number, "Tom Menino")
 # order.order_items << OrderItem.new(6, milk, milk.price)

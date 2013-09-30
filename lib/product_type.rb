@@ -11,6 +11,6 @@ class ProductType
   end
 
   def to_s
-    "Product #{@id}: #{name}: #{description}: #{price}"
+    "Product #{@id}: #{name}: #{description}: $#{price}"
   end
 end
