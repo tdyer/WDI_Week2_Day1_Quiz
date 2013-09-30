@@ -30,3 +30,6 @@ order_number += 1
 
 
 order1.order_total
+order2.order_total
+
+Order.total
