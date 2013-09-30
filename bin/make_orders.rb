@@ -26,4 +26,4 @@ order.complete_xaction
 order_number += 1
 
 
-puts "Total sales = #{Order.total_sales}"
+# puts "Total sales = #{Order.total_sales}"
