@@ -26,7 +26,6 @@ class Order
   def order_price
     @order_items.inject(0.0) do |total, item|
       total += (item.quantity * item.product.price)
-      binding.pry
     end
   end
 

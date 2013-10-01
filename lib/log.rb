@@ -1,4 +1,5 @@
 module Log
-  def log
+  def log(entry)
+    "#{entry}\n"
   end
 end
