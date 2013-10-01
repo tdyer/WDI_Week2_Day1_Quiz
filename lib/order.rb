@@ -19,7 +19,8 @@ class Order
   end
 
   def complete_xaction
-    log
+    @@cumulative_sales += order_price
+    log "Creating order...\n#{to_s}"
   end
 
   def order_price
