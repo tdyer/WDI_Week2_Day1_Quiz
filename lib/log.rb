@@ -1,5 +1,5 @@
 module Log
   def log(entry)
-    "#{entry}\n"
+    puts "#{entry}\n"
   end
 end
