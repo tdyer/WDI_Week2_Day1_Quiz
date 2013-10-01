@@ -13,6 +13,11 @@ class ProductType
 		@name = name
 		@price = price
 		@description = description
+		log("New product '#{name}' successfully created")
+	end
+
+	def to_s
+		"#{@name}"
 	end
   
 end

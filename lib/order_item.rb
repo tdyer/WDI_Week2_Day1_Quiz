@@ -11,7 +11,11 @@ class OrderItem
 	end
 
   	def to_s
-    	"product type: #{@product_type}, quantity: #{@quantity}, unit_price: #{@unit_price}"
+    	"#{@quantity} units of #{@product_type.to_s} for $#{@unit_price} each"
+  	end
+
+  	def cost
+  		@quantity * @unit_price
   	end
   
 end
