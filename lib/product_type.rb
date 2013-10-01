@@ -14,12 +14,11 @@ class ProductType
 	end
 
 	def to_s
-		@string = "ID: #{@id}, #{@name}, #{@description}, $#{@price}"
-		return @string
+		"#{@name}, #{@description}, $#{@price}"
 	end
 
 	def log
-		log_entry("Product Type created: #{@string}")
+		log_entry("Product Type created: #{to_s}")
 	end
   
 end

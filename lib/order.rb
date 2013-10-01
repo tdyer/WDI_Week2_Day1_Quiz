@@ -19,14 +19,17 @@ class Order
   end
 
   def to_s
-  	@order_summary = "#{@order_id}: #{@order_items}, total price: $#{@price}"
-  	return @order_summary
+  	arr = []
+  	@order_items.each do |item|
+  		arr << item.to_s
+   	end
+  	return "#{@order_id}: #{arr}, total price: $#{@price}"
   end
 
   def complete_xaction
   	calculate_price
   	update_total_sales
-  	log_entry("Order completed: #{@order_summary})"
+  	log_entry("Order completed: #{to_s}")
   end
 
   def self.total_sales
@@ -36,8 +39,8 @@ class Order
   def calculate_price
   	@price = 0
   	  @order_items.each do |item|
-      @price += item.unit_price
-  	  end
+      @price = @price + (item.unit_price * item.quantity)
+    end
   	return @price
   end
 

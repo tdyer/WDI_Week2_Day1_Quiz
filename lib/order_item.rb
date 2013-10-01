@@ -10,7 +10,7 @@ class OrderItem
 	end
 
   def to_s
-    "product type: #{@product}, quantity: #{@quantity}, unit_price: #{@unit_price}"
+    "#{@product_type}, quantity: #{@quantity}, unit_price: #{@unit_price}"
   end
   
 end

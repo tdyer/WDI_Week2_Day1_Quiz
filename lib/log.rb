@@ -5,6 +5,7 @@ module Log
 
 	def log_entry(info)
 	  $log << info
+	  puts info
 	end
 
 end
