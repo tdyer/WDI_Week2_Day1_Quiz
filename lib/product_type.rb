@@ -1,9 +1,11 @@
 # This is a description of a *type* of product
+
+require_relative 'log'
+
 class ProductType
 	include Log
 
 	attr_accessor :name, :price 
-	# attr_reader :id
 
 	def initialize(id, name, price)
 		@name = name
@@ -13,7 +15,7 @@ class ProductType
 	end
 
 	def to_s
-		"This product is #{name} and its price is $#{price}."
+		"Product: #{name}, price: #{price}."
 	end
   
 end

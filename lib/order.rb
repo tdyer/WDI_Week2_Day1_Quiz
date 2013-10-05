@@ -5,7 +5,7 @@ class Order
 	include Log
 	@@num_sold = 0
 
-	attr_accessor :order_items, :order_number, :customer_name, :total_sales 
+	attr_accessor :order_items, :order_number, :customer_name, :total_sales, :order_total 
 	attr_reader :order_id
 
 	def initialize(order_number, customer_name)
@@ -16,18 +16,19 @@ class Order
 		@total_sales = 0
 	end
 
-	def order_id
-		order_id = rand(1..100_000)
-		order_id
+	def to_s
+		"Order number: #{order_number}, order_items: #{order_items}"
 	end
 
 	def complete_xaction
-		log("Order complete!")
+		log("Order number: #{order_number}, order items: #{order_items}")
 		@total_sales = @total_sales + 1
 	end
 
-	def total_sales
-		@total_sales
+	 def order_total
+		order_items.inject(0) do |total, order_item|
+		total += order_item.unit_price
+		end
 	end
 
 end

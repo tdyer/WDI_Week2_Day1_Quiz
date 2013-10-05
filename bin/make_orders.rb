@@ -27,6 +27,6 @@ order.order_items << OrderItem.new(7, carrots, carrots.price)
 order.complete_xaction
 order_number += 1
 
-puts "Total sales = #{Order.total_sales}"
+puts "Total sales = #{order.total_sales}"
 
-binding pry
+binding.pry
