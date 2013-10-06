@@ -26,10 +26,6 @@ class Order
 		return	items.inject(0) {|sum, item| sum + item.unit_price}
 	end
 
-	def total_orders
-
-	end
-
 # Alternate total method using the inject method and slightly different syntax. 
 
 	# def total_price
@@ -39,6 +35,10 @@ class Order
 	# 	end
 	# 	return sum
 	# end
+
+	def total_orders
+		@@order_list << self
+	end
 
 end
 
